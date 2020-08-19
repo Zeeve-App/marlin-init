@@ -1,5 +1,5 @@
 #!/bin/bash
-#./beacon/server &
+./beacon/server &
 if [ "$1" = "masterNode" ]
 then
 #./relay/masterexec "$2:$3" &
