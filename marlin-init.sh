@@ -13,7 +13,7 @@ then
  ${BIN} 
  echo "Server is ready"
 
-if [ ${ARG1} == "masterNode" ]
+elif [ ${ARG1} == "masterNode" ]
 then
  ${BIN1} 
  echo "MasterNode is ready"
