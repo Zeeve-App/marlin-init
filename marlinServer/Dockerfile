@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-MAINTAINER Arjun Singh <arjun.singh@sofocle.com>
+MAINTAINER Arjun Chamyal <arjun.chamyal@sofocle.com>
 
 ENV MSPORT 8002
 
