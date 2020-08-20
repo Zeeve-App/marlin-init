@@ -1,12 +1,23 @@
 #!/bin/sh
 
 BIN="./beacon/server"
+BIN1="./relay/masterexec 127.0.0.1:8002"
+BIN2="./relay/relayexec 127.0.0.1:8002"
 ARG1="$1"
 ARG2="$2"
 ARG3="$3"
+CMD="ps -elf | grep ./beacon/server | wc -l"
 
-[ -z "${ARG1}" ] && { echo "[-] Mention Node Name" ; exit 1 ; } 
-[ "${ARG1}" = "masterNode" ] && { echo "[+] masterNode is ready." ; }
-[ "${ARG1}" = "relayNode" ] && { echo "[+] relayNode is ready." ; }
+if [ ${CMD} < 2 ]
+then
+ ${BIN} 
+ echo "Server is ready"
 
-$BIN $ARG1 $ARG2 $ARG3
+if [ ${ARG1} == "masterNode" ]
+then
+ ${BIN1} 
+ echo "MasterNode is ready"
+elif [ ${ARG1} == "relayNode" ]
+then
+ ${BIN2} 
+ echo "relay is ready"
