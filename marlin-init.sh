@@ -16,9 +16,9 @@ then
 elif [ "${ARG1}" = "masterNode" ]
 then
  echo "MasterNode is ready"
- ${BIN1} 
+ ${BIN1}
 elif [ "${ARG1}" = "relayNode" ]
 then
  echo "relay is ready"
- ${BIN2} 
+ ${BIN2}
 fi

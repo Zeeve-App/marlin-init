@@ -1,0 +1,8 @@
+version: '2.0'
+
+services:
+  marlin-init:
+    build: .
+    image: zeeve-marlin:server
+    ports:
+      - "8002:8002"
