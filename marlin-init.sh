@@ -6,18 +6,19 @@ BIN2="./relay/relayexec 127.0.0.1:8002"
 ARG1="$1"
 ARG2="$2"
 ARG3="$3"
-CMD="ps -elf | grep ./beacon/server | wc -l"
-
-if [ ${CMD} < 2 ]
+CMD=$(ps -elf | grep ./beacon/server | wc -l)
+echo $CMD
+if [ $CMD -lt 2  -a   "${ARG1}" != "masterNode"  -a   "${ARG1}" != "relayNode" ]
 then
- ${BIN} 
  echo "Server is ready"
+ ${BIN} 
 
-elif [ ${ARG1} == "masterNode" ]
+elif [ "${ARG1}" = "masterNode" ]
 then
- ${BIN1} 
  echo "MasterNode is ready"
-elif [ ${ARG1} == "relayNode" ]
+ ${BIN1} 
+elif [ "${ARG1}" = "relayNode" ]
 then
- ${BIN2} 
  echo "relay is ready"
+ ${BIN2} 
+fi
